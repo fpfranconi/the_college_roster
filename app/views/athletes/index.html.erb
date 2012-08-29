@@ -1,0 +1,47 @@
+<% provide(:title, 'Athletes') %>
+
+<h1>Listing athletes</h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Gender</th>
+    <th>City</th>
+    <th>State</th>
+    <th>High school</th>
+    <th>Graduation year</th>
+    <th>All american</th>
+    <th>All state</th>
+    <th>All division</th>
+    <th>State champions</th>
+    <th>Conference champions</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @athletes.each do |athlete| %>
+  <tr>
+    <td><%= athlete.first_name %></td>
+    <td><%= athlete.last_name %></td>
+    <td><%= athlete.gender %></td>
+    <td><%= athlete.city %></td>
+    <td><%= athlete.state %></td>
+    <td><%= athlete.high_school %></td>
+    <td><%= athlete.graduation_year %></td>
+    <td><%= athlete.all_american %></td>
+    <td><%= athlete.all_state %></td>
+    <td><%= athlete.all_division %></td>
+    <td><%= athlete.state_champions %></td>
+    <td><%= athlete.conference_champions %></td>
+    <td><%= link_to 'Show', athlete %></td>
+    <td><%= link_to 'Edit', edit_athlete_path(athlete) %></td>
+    <td><%= link_to 'Destroy', athlete, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Athlete', new_athlete_path %>

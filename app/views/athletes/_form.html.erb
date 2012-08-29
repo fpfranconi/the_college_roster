@@ -1,0 +1,65 @@
+<%= form_for(@athlete) do |f| %>
+  <% if @athlete.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@athlete.errors.count, "error") %> prohibited this athlete from being saved:</h2>
+
+      <ul>
+      <% @athlete.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.check_box :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :high_school %><br />
+    <%= f.text_field :high_school %>
+  </div>
+  <div class="field">
+    <%= f.label :graduation_year %><br />
+    <%= f.number_field :graduation_year %>
+  </div>
+  <div class="field">
+    <%= f.label :all_american %><br />
+    <%= f.check_box :all_american %>
+  </div>
+  <div class="field">
+    <%= f.label :all_state %><br />
+    <%= f.check_box :all_state %>
+  </div>
+  <div class="field">
+    <%= f.label :all_division %><br />
+    <%= f.check_box :all_division %>
+  </div>
+  <div class="field">
+    <%= f.label :state_champions %><br />
+    <%= f.check_box :state_champions %>
+  </div>
+  <div class="field">
+    <%= f.label :conference_champions %><br />
+    <%= f.check_box :conference_champions %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
