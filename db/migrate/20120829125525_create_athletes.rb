@@ -13,6 +13,7 @@ class CreateAthletes < ActiveRecord::Migration
       t.boolean :all_division
       t.boolean :state_champions
       t.boolean :conference_champions
+      t.integer :user_id
 
       t.timestamps
     end

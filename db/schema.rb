@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20120829125525) do
     t.boolean  "all_division"
     t.boolean  "state_champions"
     t.boolean  "conference_champions"
+    t.integer  "user_id"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
   end

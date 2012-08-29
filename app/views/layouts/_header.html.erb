@@ -15,7 +15,8 @@
 					  <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1"> 
 						Account <b class="caret"></b> </a>
 					  <ul class="dropdown-menu">
-			            	<li><%= link_to "Profile", help_path %></li>
+			            	<li><%= link_to "Edit Profile", help_path %></li>
+							<li><%= link_to "Profile", help_path %></li>
 			                <li><%= link_to "Settings", help_path %></li>
 			                <li class="divider"></li>
 			                <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>

@@ -11,11 +11,12 @@
     <th>State</th>
     <th>High school</th>
     <th>Graduation year</th>
-    <th>All american</th>
-    <th>All state</th>
-    <th>All division</th>
-    <th>State champions</th>
-    <th>Conference champions</th>
+    <th>All American</th>
+    <th>All State</th>
+    <th>All Division</th>
+    <th>State Champions</th>
+    <th>Conference Champions</th>
+	<th>User ID</th>
     <th></th>
     <th></th>
     <th></th>
@@ -35,6 +36,7 @@
     <td><%= athlete.all_division %></td>
     <td><%= athlete.state_champions %></td>
     <td><%= athlete.conference_champions %></td>
+	<td><%= athlete.user_id %></td>
     <td><%= link_to 'Show', athlete %></td>
     <td><%= link_to 'Edit', edit_athlete_path(athlete) %></td>
     <td><%= link_to 'Destroy', athlete, method: :delete, data: { confirm: 'Are you sure?' } %></td>

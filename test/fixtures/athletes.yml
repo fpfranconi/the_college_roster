@@ -15,6 +15,7 @@
 #  all_division         :boolean
 #  state_champions      :boolean
 #  conference_champions :boolean
+#  user_id              :integer
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #

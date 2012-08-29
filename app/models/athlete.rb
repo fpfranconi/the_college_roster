@@ -15,10 +15,25 @@
 #  all_division         :boolean
 #  state_champions      :boolean
 #  conference_champions :boolean
+#  user_id              :integer
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #
 
 class Athlete < ActiveRecord::Base
-  attr_accessible :all_american, :all_division, :all_state, :city, :conference_champions, :first_name, :gender, :graduation_year, :high_school, :last_name, :state, :state_champions
+
+  attr_accessible :all_american, :all_division, :all_state, :city, :conference_champions, :first_name, :gender, :graduation_year, :high_school, :last_name, :state, :state_champions, :user_id
+
+  belongs_to :user
+  
+  validates :city, presence: true
+  validates :first_name, presence: true
+  validates :graduation_year, presence: true
+  validates :high_school, presence: true
+  validates :last_name, presence: true
+  validates :state, presence: true
+  validates :user_id, presence: true
+  
+  default_scope order: 'athletes.user_id DESC'
+
 end
