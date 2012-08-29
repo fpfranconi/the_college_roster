@@ -13,7 +13,6 @@ class AthletesController < ApplicationController
   # GET /athletes/1
   # GET /athletes/1.json
   def show
-    @user = User.find(params[:id])
     @athlete = Athlete.find(params[:id])
 
     respond_to do |format|

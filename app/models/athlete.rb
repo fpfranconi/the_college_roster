@@ -24,7 +24,7 @@ class Athlete < ActiveRecord::Base
 
   attr_accessible :all_american, :all_division, :all_state, :city, :conference_champions, :first_name, :gender, :graduation_year, :high_school, :last_name, :state, :state_champions, :user_id
 
-  belongs_to :user
+  # belongs_to :user
   
   validates :city, presence: true
   validates :first_name, presence: true
