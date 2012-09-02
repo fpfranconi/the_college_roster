@@ -44,6 +44,7 @@ class AthletesController < ApplicationController
   # POST /athletes.json
   def create
     @athlete = Athlete.new(params[:athlete])
+    @athlete.user_id = current_user.id
 
     respond_to do |format|
       if @athlete.save
