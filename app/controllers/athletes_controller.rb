@@ -1,6 +1,6 @@
 class AthletesController < ApplicationController
   # make sure user is signed in before they access
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => [:index, :show] 
 
   # GET /athletes
   # GET /athletes.json
