@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :gender %><br />
-    <%= f.check_box :gender %>
+    <%= f.select :gender, [['Male', 'male'],['Female','female']], { :include_blank => true } %>
   </div>
   <div class="field">
     <%= f.label :city %><br />
@@ -29,7 +29,7 @@
   </div>
   <div class="field">
     <%= f.label :state %><br />
-    <%= f.text_field :state %>
+    <%= f.select :state, us_states, { :include_blank => true } %>
   </div>
   <div class="field">
     <%= f.label :high_school %><br />
@@ -39,31 +39,28 @@
     <%= f.label :graduation_year %><br />
     <%= f.number_field :graduation_year %>
   </div>
+	<br>
+  <h3>Individual Accomplishments</h3>
+	<br>
   <div class="field">
-    <%= f.label :all_american %><br />
-    <%= f.check_box :all_american %>
+    <%= f.check_box :all_american %> <%= f.label :all_american %> 
   </div>
   <div class="field">
-    <%= f.label :all_state %><br />
-    <%= f.check_box :all_state %>
+   <%= f.check_box :all_state %> <%= f.label :all_state %> 
   </div>
   <div class="field">
-    <%= f.label :all_division %><br />
-    <%= f.check_box :all_division %>
+    <%= f.check_box :all_division %> <%= f.label :all_division %> 
+  </div>
+	<br>
+  <h3>Team Accomplishments</h3>
+	<br>
+  <div class="field">
+   <%= f.check_box :state_champions %> <%= f.label :state_champions %> 
   </div>
   <div class="field">
-    <%= f.label :state_champions %><br />
-    <%= f.check_box :state_champions %>
+    <%= f.check_box :conference_champions %> <%= f.label :conference_champions %> 
   </div>
-  <div class="field">
-    <%= f.label :conference_champions %><br />
-    <%= f.check_box :conference_champions %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </div>
-
+  <br>
   <div class="actions">
     <%= f.submit "Create Athlete", class: "btn btn-large btn-primary" %>
   </div>
