@@ -1,18 +1,26 @@
 <% provide(:title, 'Athletes') %>
-	<div class="filterblock">
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="athletefilter span3">
+			<p>Sport</p>
+			<br>
+			<p>Position</p>
+			<br>
+			<p>Graduation Year</p>
+			<br>
+			<p>State</p>
+		</div>
+		<div class="results span9">
+			<h1>Athletes</h1>
+			<table align="center">
+			<% @athletes.each do |athlete| %>
+	  			<tr>
+					<td><%= link_to athlete.full_name, athlete %></td>
+	  			<tr>
+	    			<td><%= athlete.city %>, <%= athlete.state %></td>
+	  			<br>
+			<% end %>
+			</table>
+		</div>
 	</div>
-	<div class="results">
-		<h1>Athletes</h1>
-		<table class="Results">
-		<% @athletes.each do |athlete| %>
-  			<tr>
-				<td><%= link_to athlete.full_name, athlete %></td>
-  			<tr>
-    			<td><%= athlete.city %>, <%= athlete.state %></td>
-  			<br>
-		<% end %>
-		</table>
-	</div>
-<br>
-
-<%= link_to 'New Athlete', new_athlete_path %>
+</div>
