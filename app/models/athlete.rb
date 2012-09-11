@@ -36,4 +36,8 @@ class Athlete < ActiveRecord::Base
   
   default_scope order: 'athletes.user_id DESC'
 
+  def full_name
+      "#{first_name} #{last_name}"
+  end
+
 end

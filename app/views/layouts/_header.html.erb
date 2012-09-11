@@ -9,19 +9,32 @@
 				<%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Sign in", new_user_session_path %>
 				<% end %>
 			<nav>
-			<ul class="nav pull-right">
-			    <% if signed_in? %>
-			    	<li id="fat-menu" class="dropdown" id="menu1">
-					  <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1"> 
-						Account <b class="caret"></b> </a>
+				<% if signed_in? %>
+				<ul class="nav pull-right">
+				    <li id="fat-menu" class="dropdown" id="menu2">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#menu2"> 
+					Athletes <b class="caret"></b> </a>
+						<ul class="dropdown-menu">
+					    	<li><%= link_to "Teammates" %></li>
+							<li><%= link_to "Rivals" %></li>
+							<li><%= link_to "Find Athletes", 'http://localhost:3000/athletes' %></li>
+					     </ul>
+				    </li>
+			    	<li><%= link_to "College Finder" %></li>
+					<li id="fat-menu" class="dropdown" id="menu2">
+					  <a class="dropdown-toggle" data-toggle="dropdown" href="#menu2"> 
+						My Account <b class="caret"></b> </a>
 					  <ul class="dropdown-menu">
-			            	<li><%= link_to "Edit Profile", edit_athlete_path(current_user) %></li>
-							<li><%= link_to "Profile", athlete_path(current_user) %></li>
+			            	<li><%= link_to "Profile", athlete_path(current_user) %></li>
+							<li><%= link_to "Edit Profile", edit_athlete_path(current_user) %></li>
+							<li><%= link_to "Change Password", edit_user_registration_path %></li>
 			                <li class="divider"></li>
 			                <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-			             </ul>
+			           </ul>
 			         </li>
 			      <% else %>
+					<ul class="nav pull-right">
+				    	<li><%= link_to "Search Athletes", 'http://localhost:3000/athletes' %> </li>
 			      <% end %>
 			</ul>
           </nav>
