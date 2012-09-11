@@ -2,6 +2,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def after_sign_in_path_for(resource)
-    new_athlete_path
+    if Athlete.exists?(current_user.athlete.id)
+      edit_athlete_path(current_user.athlete.id)
+    else
+      new_athlete_path
+    end
   end
 end
