@@ -17,7 +17,7 @@
 						<ul class="dropdown-menu">
 					    	<li><%= link_to "Teammates" %></li>
 							<li><%= link_to "Rivals" %></li>
-							<li><%= link_to "Find Athletes", 'http://localhost:3000/athletes' %></li>
+							<li><%= link_to "Find Athletes", athletes_path %></li>
 					     </ul>
 				    </li>
 			    	<li><%= link_to "College Finder" %></li>
@@ -34,7 +34,7 @@
 			         </li>
 			      <% else %>
 					<ul class="nav pull-right">
-				    	<li><%= link_to "Search Athletes", 'http://localhost:3000/athletes' %> </li>
+				    	<li><%= link_to "Search Athletes", athletes_path %> </li>
 			      <% end %>
 			</ul>
           </nav>
