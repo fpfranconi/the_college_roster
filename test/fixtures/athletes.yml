@@ -1,0 +1,51 @@
+# == Schema Information
+#
+# Table name: athletes
+#
+#  id                   :integer          not null, primary key
+#  first_name           :string(255)
+#  last_name            :string(255)
+#  gender               :boolean
+#  city                 :string(255)
+#  state                :string(255)
+#  high_school          :string(255)
+#  graduation_year      :integer
+#  all_american         :boolean
+#  all_state            :boolean
+#  all_division         :boolean
+#  state_champions      :boolean
+#  conference_champions :boolean
+#  user_id              :integer
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  gender: false
+  city: MyString
+  state: MyString
+  high_school: MyString
+  graduation_year: 1
+  all_american: false
+  all_state: false
+  all_division: false
+  state_champions: false
+  conference_champions: false
+
+two:
+  first_name: MyString
+  last_name: MyString
+  gender: false
+  city: MyString
+  state: MyString
+  high_school: MyString
+  graduation_year: 1
+  all_american: false
+  all_state: false
+  all_division: false
+  state_champions: false
+  conference_champions: false

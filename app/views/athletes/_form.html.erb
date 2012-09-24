@@ -1,0 +1,70 @@
+<%= form_for(@athlete) do |f| %>
+  <% if @athlete.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@athlete.errors.count, "error") %> prohibited this athlete from being saved:</h2>
+
+      <ul>
+      <% @athlete.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.select :state, us_states, { :include_blank => true } %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.select :gender, [['Male', 'male'],['Female','female']], { :include_blank => true } %>
+  </div>
+  <div class="field">
+    <%= f.label :height_feet %> <p>(Feet then Inches)</p>
+    <%= f.number_field :height_feet %> <%= f.number_field :height_inches %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.number_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :high_school %><br />
+    <%= f.text_field :high_school %>
+  </div>
+  <div class="field">
+    <%= f.label :graduation_year %><br />
+    <%= f.number_field :graduation_year %>
+  </div>
+  <div class="field">
+    <%= f.label :gpa %><br />
+    <%= f.number_field :gpa %>
+  </div>
+  <div class="field">
+    <%= f.label :sat %><br />
+    <%= f.number_field :sat %>
+  </div>
+  <div class="field">
+    <%= f.label :act %><br />
+    <%= f.number_field :act %>
+  </div>
+  <div class="field">
+    <%= f.label :class_rank %><br />
+    <%= f.select :class_rank, [['Top 1%'],['Top 5%'],['Top 10%'],['Top 25%'],['Top 50%']], { :include_blank => true } %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit "Update Profile",  class: "btn btn-large btn-primary" %>
+  </div>
+<% end %>

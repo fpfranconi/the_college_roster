@@ -1,0 +1,66 @@
+<% provide(:title, 'Athlete Profile') %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @athlete.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @athlete.last_name %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @athlete.gender %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @athlete.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @athlete.state %>
+</p>
+
+<p>
+  <b>High school:</b>
+  <%= @athlete.high_school %>
+</p>
+
+<p>
+  <b>Graduation year:</b>
+  <%= @athlete.graduation_year %>
+</p>
+
+<p>
+  <b>All american:</b>
+  <%= @athlete.all_american %>
+</p>
+
+<p>
+  <b>All state:</b>
+  <%= @athlete.all_state %>
+</p>
+
+<p>
+  <b>All division:</b>
+  <%= @athlete.all_division %>
+</p>
+
+<p>
+  <b>State champions:</b>
+  <%= @athlete.state_champions %>
+</p>
+
+<p>
+  <b>Conference champions:</b>
+  <%= @athlete.conference_champions %>
+</p>
+
+<%= link_to 'Edit', edit_athlete_path(@athlete) %> |
+<%= link_to 'Back', athletes_path %>

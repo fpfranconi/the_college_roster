@@ -1,0 +1,26 @@
+<% provide(:title, 'Athletes') %>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="athletefilter span3">
+			<p>Sport</p>
+			<br>
+			<p>Position</p>
+			<br>
+			<p>Graduation Year</p>
+			<br>
+			<p>State</p>
+		</div>
+		<div class="results span9">
+			<h1>Athletes</h1>
+			<div class=results style="center">
+			<% @athletes.each do |athlete| %>
+				<li>
+					<p><%= link_to athlete.full_name, athlete %></p>
+	    			<p><%= athlete.city %>, <%= athlete.state %></p>
+	  			</li>
+				<br>
+			<% end %>
+			</div>
+		</div>
+	</div>
+</div>
