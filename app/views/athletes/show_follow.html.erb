@@ -1,0 +1,20 @@
+<% provide(:title, @title) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1><%= link_to @athlete.full_name, @athlete %></h1>
+      <span><b>Microposts:</b> <%= @athlete.microposts.count %></span>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>>
+    </section>
+  </aside>
+  <div class="span8">
+    <h3><%= @title %></h3>
+    <% if @athletes.any? %>
+      <ul class="athletes">
+        <%= render @athletes %>
+      </ul>
+    <% end %>
+  </div>
+</div>

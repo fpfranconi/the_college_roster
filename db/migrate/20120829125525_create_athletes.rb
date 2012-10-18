@@ -11,7 +11,7 @@ class CreateAthletes < ActiveRecord::Migration
       t.integer :height_feet
       t.integer :height_inches
       t.integer :weight
-      t.integer :gpa
+      t.decimal :gpa
       t.integer :sat
       t.integer :act
       t.string :class_rank

@@ -43,7 +43,16 @@ class MicropostsController < ApplicationController
   # POST /microposts
   # POST /microposts.xml
   def create
-    @micropost = Micropost.new(params[:micropost])
+    @micropost = current_user.athlete.microposts.build(params[:micropost])
+    @micropost.athlete_id = current_user.athlete.id
+    if @micropost.save
+      flash[:success] = "Micropost created!"
+      redirect_to athlete_path(current_user.athlete.id)
+    else
+      flash[:fail] = "Your message didn't post"
+      redirect_to athlete_path(current_user.athlete.id)
+    end
+  end
 
     respond_to do |format|
       if @micropost.save
@@ -77,10 +86,17 @@ class MicropostsController < ApplicationController
   def destroy
     @micropost = Micropost.find(params[:id])
     @micropost.destroy
+    redirect_to athlete_path(current_user.athlete.id)
 
     respond_to do |format|
       format.html { redirect_to(microposts_url) }
       format.xml  { head :ok }
     end
-  end
+  
+  private
+
+    def correct_athlete
+      @micropost = current_user.athlete.microposts.find_by_id(params[:id])
+      redirect_to athlete_path(current_user.athlete.id) if @micropost.nil?
+    end
 end

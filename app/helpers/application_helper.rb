@@ -10,6 +10,18 @@ module ApplicationHelper
       end
   end
 
+  def current_athlete=(athlete)
+    @current_athlete = current_user.athlete
+  end
+
+  def current_athlete
+    @current_athlete ||= current_user.athlete
+  end
+
+  def current_athlete?(athlete)
+    athlete == current_athlete
+  end
+
   def us_states
       [
         ['Alabama', 'AL'],

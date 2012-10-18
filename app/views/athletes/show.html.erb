@@ -1,66 +1,78 @@
 <% provide(:title, 'Athlete Profile') %>
+<% provide(@athlete.full_name) %>
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>First name:</b>
-  <%= @athlete.first_name %>
-</p>
+<div class="row-fluid" "span12">
+	<div class="span2">
+		<p>
+		</p>
+	</div>
 
-<p>
-  <b>Last name:</b>
-  <%= @athlete.last_name %>
-</p>
+	<div class="span3">
+		<h3>
+		  <%= @athlete.full_name %>
+		</h3>
 
-<p>
-  <b>Gender:</b>
-  <%= @athlete.gender %>
-</p>
+			<p>
+			  Class of <%= @athlete.graduation_year %>
+			</p>
 
-<p>
-  <b>City:</b>
-  <%= @athlete.city %>
-</p>
+			<p>
+			  <%= @athlete.high_school %>
+			</p>
 
-<p>
-  <b>State:</b>
-  <%= @athlete.state %>
-</p>
+			<p>
+			  <%= @athlete.city %>, <%= @athlete.state %>
+			</p>
 
-<p>
-  <b>High school:</b>
-  <%= @athlete.high_school %>
-</p>
+			<p>
+			  Height: <%= @athlete.height_feet%>'<%= @athlete.height_inches%>" 
+			</p>
 
-<p>
-  <b>Graduation year:</b>
-  <%= @athlete.graduation_year %>
-</p>
+			<p>
+			  Weight: <%= @athlete.weight %>
+			</p>
 
-<p>
-  <b>All american:</b>
-  <%= @athlete.all_american %>
-</p>
+			<p>
+			  GPA: <%= @athlete.gpa %>
+			</p>
 
-<p>
-  <b>All state:</b>
-  <%= @athlete.all_state %>
-</p>
+			<p>
+			  SAT: <%= @athlete.sat %>
+			</p>
 
-<p>
-  <b>All division:</b>
-  <%= @athlete.all_division %>
-</p>
+			<p>
+			  ACT: <%= @athlete.act %>
+			</p>
 
-<p>
-  <b>State champions:</b>
-  <%= @athlete.state_champions %>
-</p>
+			<p>
+			  Class Rank: <%= @athlete.class_rank %>
+			</p>
+	</div>
 
-<p>
-  <b>Conference champions:</b>
-  <%= @athlete.conference_champions %>
-</p>
+	<div class="span4">
+		<p>
+		</p>
+	</div>
+</div>
 
-<%= link_to 'Edit', edit_athlete_path(@athlete) %> |
-<%= link_to 'Back', athletes_path %>
+<div class="row-fluid" "span12">
+	<div class="span4">
+		<div>
+		    <%= render 'shared/stats' %>
+		</div>
+		<div>	
+			<%= render '/shared/micropost_form' %>
+		</div>
+	</div>
+	<div class="span8">
+	    <div class="span8">
+			<div>
+				<%= render 'follow_form'%>
+			</div>
+		      <h3>Micropost Feed</h3>
+		      <%= render '/shared/feed' %>
+		</div>
+	</div>
+</div>

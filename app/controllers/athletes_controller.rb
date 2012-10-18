@@ -1,12 +1,12 @@
 class AthletesController < ApplicationController
   # make sure user is signed in before they access
-  before_filter :authenticate_user!, :except => [:index, :show] 
+  before_filter :authenticate_user!
 
   # GET /athletes
   # GET /athletes.json
   def index
     @athletes = Athlete.all
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @athletes }
@@ -17,7 +17,10 @@ class AthletesController < ApplicationController
   # GET /athletes/1.json
   def show
     @athlete = Athlete.find(params[:id])
-
+    @micropost = current_user.athlete.microposts.build
+    @microposts = @athlete.microposts.paginate(page: params[:page])
+    @feed_items = current_user.athlete.feed.paginate(page: params[:page])
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @athlete }
@@ -84,5 +87,23 @@ class AthletesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def current_athlete
+    current_athlete = current_user.athlete
+  end
+  
+  def following
+      @title = "Following"
+      @athlete = Athlete.find(params[:id])
+      @athletes = @athlete.followed_athletes
+      render 'show_follow'
+    end
+
+    def followers
+      @title = "Followers"
+      @athlete = Athlete.find(params[:id])
+      @athletes = @athlete.followers
+      render 'show_follow'
+    end
   
 end

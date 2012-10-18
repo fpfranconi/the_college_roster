@@ -1,0 +1,9 @@
+<% unless current_athlete?(@athlete) %>
+	<div id="follow_form">
+  	<% if current_athlete.following?(@athlete) %>
+    	<%= render 'unfollow' %>
+  	<% else %>
+    	<%= render 'follow' %>
+  	<% end %>
+  	</div>
+<% end %>
