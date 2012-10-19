@@ -105,5 +105,12 @@ class AthletesController < ApplicationController
       @athletes = @athlete.followers
       render 'show_follow'
     end
+    
+    private
+    
+    def correct_athlete
+      @athlete = Athlete.find(params[:id])
+      redirect_to(root_url) unless current_athlete?(@athlete)
+    end
   
 end

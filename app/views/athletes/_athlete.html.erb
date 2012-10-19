@@ -1,0 +1,7 @@
+<li>
+  <%= link_to athlete.full_name, athlete %>
+  <% if !current_athlete?(athlete) %>
+    | <%= link_to "delete", athlete, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+</li>

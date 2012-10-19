@@ -1,6 +1,7 @@
 class MicropostsController < ApplicationController
 
   before_filter :authenticate_user!
+  before_filter :correct_athlete,   only: :destroy
 
   # GET /microposts
   # GET /microposts.xml
