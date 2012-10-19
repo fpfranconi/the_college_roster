@@ -11,16 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20121016221724) do
+=======
+ActiveRecord::Schema.define(:version => 20120829125525) do
+>>>>>>> 5b8afc67183b26786e60a3c658bc64b97ea23e02
 
   create_table "athletes", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
+<<<<<<< HEAD
     t.string   "gender"
+=======
+    t.boolean  "gender"
+>>>>>>> 5b8afc67183b26786e60a3c658bc64b97ea23e02
     t.string   "city"
     t.string   "state"
     t.string   "high_school"
     t.integer  "graduation_year"
+<<<<<<< HEAD
     t.integer  "height_feet"
     t.integer  "height_inches"
     t.integer  "weight"
@@ -51,6 +60,18 @@ ActiveRecord::Schema.define(:version => 20121016221724) do
   add_index "relationships", ["follower_id", "followed_id"], :name => "index_relationships_on_follower_id_and_followed_id", :unique => true
   add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
 
+=======
+    t.boolean  "all_american"
+    t.boolean  "all_state"
+    t.boolean  "all_division"
+    t.boolean  "state_champions"
+    t.boolean  "conference_champions"
+    t.integer  "user_id"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+>>>>>>> 5b8afc67183b26786e60a3c658bc64b97ea23e02
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false

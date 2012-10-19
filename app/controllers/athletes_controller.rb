@@ -1,12 +1,20 @@
 class AthletesController < ApplicationController
   # make sure user is signed in before they access
+<<<<<<< HEAD
   before_filter :authenticate_user!
+=======
+  before_filter :authenticate_user!, :except => [:index, :show] 
+>>>>>>> 5b8afc67183b26786e60a3c658bc64b97ea23e02
 
   # GET /athletes
   # GET /athletes.json
   def index
     @athletes = Athlete.all
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 5b8afc67183b26786e60a3c658bc64b97ea23e02
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @athletes }
@@ -17,10 +25,14 @@ class AthletesController < ApplicationController
   # GET /athletes/1.json
   def show
     @athlete = Athlete.find(params[:id])
+<<<<<<< HEAD
     @micropost = current_user.athlete.microposts.build
     @microposts = @athlete.microposts.paginate(page: params[:page])
     @feed_items = current_user.athlete.feed.paginate(page: params[:page])
     
+=======
+
+>>>>>>> 5b8afc67183b26786e60a3c658bc64b97ea23e02
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @athlete }
@@ -88,6 +100,7 @@ class AthletesController < ApplicationController
     end
   end
   
+<<<<<<< HEAD
   def current_athlete
     current_athlete = current_user.athlete
   end
@@ -113,4 +126,6 @@ class AthletesController < ApplicationController
       redirect_to(root_url) unless current_athlete?(@athlete)
     end
   
+=======
+>>>>>>> 5b8afc67183b26786e60a3c658bc64b97ea23e02
 end

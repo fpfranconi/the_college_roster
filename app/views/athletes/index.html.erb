@@ -12,6 +12,7 @@
 		</div>
 		<div class="results span9">
 			<h1>Athletes</h1>
+<<<<<<< HEAD
 			<div class=results style="center">
 			<% @athletes.each do |athlete| %>
 				<li>
@@ -21,6 +22,17 @@
 				<br>
 			<% end %>
 			</div>
+=======
+			<table align="center">
+			<% @athletes.each do |athlete| %>
+	  			<tr>
+					<td><%= link_to athlete.full_name, athlete %></td>
+	  			<tr>
+	    			<td><%= athlete.city %>, <%= athlete.state %></td>
+	  			<br>
+			<% end %>
+			</table>
+>>>>>>> 5b8afc67183b26786e60a3c658bc64b97ea23e02
 		</div>
 	</div>
 </div>

@@ -10,6 +10,7 @@ module ApplicationHelper
       end
   end
 
+<<<<<<< HEAD
   def current_athlete=(athlete)
     @current_athlete = current_user.athlete
   end
@@ -22,6 +23,8 @@ module ApplicationHelper
     athlete == current_athlete
   end
 
+=======
+>>>>>>> 5b8afc67183b26786e60a3c658bc64b97ea23e02
   def us_states
       [
         ['Alabama', 'AL'],
