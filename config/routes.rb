@@ -1,6 +1,5 @@
 TheCollegeRoster::Application.routes.draw do
 
-<<<<<<< HEAD
   resources :microposts
   resources :athletes do 
     member do
@@ -8,9 +7,7 @@ TheCollegeRoster::Application.routes.draw do
     end
   end
   resources :relationships, only: [:create, :destroy]
-=======
   resources :athletes
->>>>>>> 5b8afc67183b26786e60a3c658bc64b97ea23e02
 
   root to: "static_pages#home"
 
