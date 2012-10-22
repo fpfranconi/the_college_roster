@@ -1,8 +1,6 @@
 <% provide(:title, 'Athlete Profile') %>
 <% provide(@athlete.full_name) %>
 
-<p id="notice"><%= notice %></p>
-
 <div class="row-fluid" "span12">
 	<div class="span2">
 		<p>
@@ -57,22 +55,30 @@
 	</div>
 </div>
 
-<div class="row-fluid" "span12">
-		<div class="span4" "container">
-			<div>
-			    <%= render 'shared/stats' %>
+<div class="row-fluid">
+	<div class="tabbable span9">
+		<ul class="nav nav-tabs" id="myTab">
+			<li class="active"><a href="#feed" data-toggle="tab">Feed</a></li>
+			<li><a href="#stats" data-toggle="tab">Stats (Coming Soon!)</a></li>
+			<li><a href="#videos" data-toggle="tab">Videos (Coming Soon!)</a></li>
+			<li><a href="#colleges" data-toggle="tab">Colleges (Coming Soon!)</a></li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="feed">
+				<%= render 'feed'%>
 			</div>
-			<div>	
-				<%= render '/shared/micropost_form' %>
+			<div class="tab-pane" id="stats">
+				<h4>Stats</h4>
+				<p>Content for the stats tab.</p>
+			</div>
+			<div class="tab-pane" id="videos">
+				<h4>Videos</h4>
+				<p>Content for the video tab.</p>
+			</div>
+			<div class="tab-pane" id="colleges">
+				<h4>Colleges</h4>
+				<p>Content for the colleges tab.</p>
 			</div>
 		</div>
-		<div class="span8" "container">
-				<div>
-					<%= render 'follow_form'%>
-				</div>
-			      <h3>Micropost Feed</h3>
-			      <%= render '/shared/feed' %>
-		</div>
-	</ul>
+	</div>
 </div>
-

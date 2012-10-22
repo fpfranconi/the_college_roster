@@ -1,6 +1,6 @@
 @import "bootstrap";
 
-/////////* mixins, variables, etc. */////////////
+//////////* mixins, variables, etc. *///////////////
 
 $grayMediumLight: #eaeaea;
 
@@ -80,7 +80,7 @@ p {
 	float: right;
 	color: white;
 	&:a {
-	  color: $grayDarker;
+	  color: $grayMediumLight;
 	&:hover { 
 	   color: white;
 	    }
@@ -222,4 +222,11 @@ aside {
   .gravatar {
     margin: 1px 1px;
   }
+}
+
+
+/////////////////* Athlete Container *//////////////////////
+
+.tab-content {
+	height: 300px;
 }
