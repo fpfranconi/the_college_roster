@@ -1,15 +1,5 @@
 <% @athlete ||= current_athlete %>
 <div class="stats">
-  <a href="<%= following_athlete_path(@athlete) %>">
-    <strong id="following" class="stat">
-      <%= @athlete.followed_athletes.count %>
-    </strong>
-    following
-  </a>
-  <a href="<%= followers_athlete_path(@athlete) %>">
-    <strong id="followers" class="stat">
-      <%= @athlete.followers.count %>
-    </strong>
-    followers
-  </a>
+  <a href="<%= following_athlete_path(@athlete) %>"> <strong id="following" class="stat"> <%= @athlete.followed_athletes.count %> </strong> following </a>
+  <a href="<%= followers_athlete_path(@athlete) %>"> <strong id="followers" class="stat"> <%= @athlete.followers.count %> </strong> followers </a>
 </div>

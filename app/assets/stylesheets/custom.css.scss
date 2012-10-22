@@ -19,6 +19,8 @@ section {
 }
 
 textarea {
+  height: 40px;
+  width: 590px;
   resize: vertical;
 }
 
@@ -165,6 +167,12 @@ label {
   vertical-align: baseline;
 }
 
+/////////////////* Athlete Container *//////////////////////
+
+#scrollingfeed {
+	height: 100px;
+}
+
 //////////////////* Microposts *//////////////////
 
 .microposts {
@@ -225,8 +233,3 @@ aside {
 }
 
 
-/////////////////* Athlete Container *//////////////////////
-
-.tab-content {
-	height: 300px;
-}
