@@ -195,13 +195,16 @@ label {
   margin-right: 10px;
 }
 aside {
-  textarea {
+	textarea {
     height: 100px;
     margin-bottom: 5px;
   }
 }
 
-/////////////////* sidebar *//////////////////////
+#inline {
+	display: inline-block;	
+	vertical-align: baseline;	
+}
 
 .stats {
   overflow: auto;
@@ -211,12 +214,14 @@ aside {
     border-left: 1px solid $grayLighter;
     color: gray;
     &:first-child {
-      padding-left: 0;
+      padding-left: 20px;
+	  padding-right: 20px;
       border: 0;
     }
     &:hover {
       text-decoration: none;
-      color: $blue;
+      color: white;
+	  background-color: #9C9494;
     }
   }
   strong {

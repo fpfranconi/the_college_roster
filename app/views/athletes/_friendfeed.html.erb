@@ -1,16 +1,27 @@
 <div class="row">
 	<div class="span9">
-		<div>
-		    <%= render 'shared/stats' %>
-		</div>
-		<div>	
-			<%= render '/shared/micropost_form' %>
-		</div>
+		<% if current_athlete?(@athlete) %>	
+			<div>
+			    <%= render 'shared/stats' %>
+			</div>
+			<div>
+				<%= render '/shared/micropost_form' %>
+			</div>
+			<div>
+				<%= render 'follow_form'%>
+			</div>
+		<%else%>
+			<div id="inline">
+				<%= render 'follow_form'%>
+			</div>
+			<div id="inline">
+			    <%= render 'shared/stats'%> 
+			</div>
+		<% end %>	
 	</div>
 </div>
 
 <div class="row span8">
-	<%= render 'follow_form'%>
 	<div class="container span8" id="scrollingfeed">
 		<h3>Micropost Feed</h3>
 		<%= render '/shared/feed' %>
