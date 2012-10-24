@@ -19,7 +19,7 @@ class AthletesController < ApplicationController
     @athlete = Athlete.find(params[:id])
     @micropost = current_user.athlete.microposts.build
     @microposts = @athlete.microposts.paginate(page: params[:page])
-    @feed_items = current_user.athlete.feed.paginate(page: params[:page])
+    @feed_items = @athlete.feed.paginate(page: params[:page])
     
     respond_to do |format|
       format.html # show.html.erb
