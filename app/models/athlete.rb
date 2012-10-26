@@ -52,6 +52,8 @@ class Athlete < ActiveRecord::Base
   validates :act, :inclusion => { :in => 1..36}
   
   default_scope order: 'athletes.user_id DESC'
+  
+  scope :filter, lambda { |low, high| where(:graduation_year => low..high) }
 
   def full_name
       "#{first_name} #{last_name}"
@@ -71,6 +73,10 @@ class Athlete < ActiveRecord::Base
 
   def unfollow!(other_athlete)
     relationships.find_by_followed_id(other_athlete.id).destroy
+  end
+  
+  def self.low_high_graduation_year
+      [Athlete.minimum(:graduation_year), Athlete.maximum(:graduation_year)]
   end
   
 end

@@ -1,16 +1,32 @@
 <% provide(:title, 'Athletes') %>
 <div class="container-fluid">
 	<div class="row-fluid">
-		<div class="athletefilter span3">
+		<div class="athletefilter span4">
+			<p>Name</p>
+			<br>
 			<p>Sport</p>
 			<br>
 			<p>Position</p>
 			<br>
-			<p>Graduation Year</p>
+			<h4>Graduation Year</h4>
+			<div class="span4"></div>
+			<br>
+			<div id="x_slider" style="font-size:62.5%; width:150px;"></div>
+			<br>
+			<div>
+				<p>	
+					<span class="span3" id="x_low_selected"><%= @graduation_year_range.first %></span> 
+					<span class="span4" id="x_high_selected"><%= @graduation_year_range.last %></span>
+				</p>
+			</div>
 			<br>
 			<p>State</p>
+			<br>
+			<p>Height</p>
+			<br>
+			<p>Weight</p>
 		</div>
-		<div class="results span9">
+		<div class="results span8">
 			<h1>Athletes</h1>
 			<div class=results style="center">
 			<% @athletes.each do |athlete| %>
@@ -24,3 +40,26 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+  $(function() {
+    $("#x_slider").slider( { 
+      range: true,
+      step: 1,
+      max: <%= @graduation_year_range.last %>,
+      min: <%= @graduation_year_range.first %>,
+      values: [<%= @graduation_year_range.first %>, <%= @graduation_year_range.last %> ],
+      stop: function(event, ui) {
+        var prices = $('#x_slider').slider('option', 'values');
+        $('#x_low_selected').html(graduation_years[0]);
+        $('#x_high_selected').html(graduation_years[1]);
+        $.ajax({
+          type: "GET",
+          data: ({ low: graduation_years[0], high: graduation_years[1] }),
+          url: 'http://0.0.0.0:3000/athletes',
+          dataType: 'script'
+        });
+      }
+    });
+  });
+</script>

@@ -5,8 +5,14 @@ class AthletesController < ApplicationController
   # GET /athletes
   # GET /athletes.json
   def index
-    @athletes = Athlete.all
+    unless params[:low] && params[:high]
+      @athletes = Athlete.all
+    else
+      @athletes = Athlete.filter(params[:low], params[:high])
+    end
 
+    @graduation_year_range = Athlete.low_high_graduation_year
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @athletes }
