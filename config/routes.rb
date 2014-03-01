@@ -1,5 +1,8 @@
 TheCollegeRoster::Application.routes.draw do
 
+  devise_for :users
+  devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end
+
   resources :microposts
   resources :athletes do 
     member do
@@ -14,8 +17,6 @@ TheCollegeRoster::Application.routes.draw do
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
-
-  devise_for :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

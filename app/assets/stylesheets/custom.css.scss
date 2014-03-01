@@ -2,7 +2,15 @@
 
 //////////* mixins, variables, etc. *///////////////
 
+$lightGray: #999;
 $grayMediumLight: #eaeaea;
+$grayDarker: #222;
+$grayDark: #333;
+$gray: #555;
+$grayLight: #999;
+$grayLighter: #eee;
+$white: #fff;
+
 
 //////////////* universal */////////////////////////
 
@@ -29,6 +37,10 @@ textarea {
   h1 {
     margin-bottom: 10px;
   }
+}
+
+#signupbutton{
+	color: white;
 }
 
 //////////////////* typography *///////////////////////////////
@@ -61,7 +73,6 @@ p {
 
 //////////////////* header *///////////////////////////
 
-
 #logo {
   float: left;
   margin-right: 10px;
@@ -85,6 +96,7 @@ p {
 	  color: $grayMediumLight;
 	&:hover { 
 	   color: white;
+	   background-color: grayLighter;
 	    }
 	  }
 }

@@ -27,7 +27,7 @@ class Athlete < ActiveRecord::Base
   attr_accessible :city, :first_name, :gender, :graduation_year, :high_school, :last_name, :state, :height_feet, :height_inches, :weight, :gpa, :sat, :act, :class_rank, :user_id
 
   belongs_to :user
-  
+
   has_many :microposts, dependent: :destroy
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
   has_many :followed_athletes, through: :relationships, source: :followed
@@ -36,14 +36,14 @@ class Athlete < ActiveRecord::Base
                                      dependent:   :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
   
-  validates :city, presence: true
-  validates :first_name, presence: true
+  validates :city,            presence: true
+  validates :first_name,      presence: true
   validates :graduation_year, presence: true, :inclusion => { :in => 2012..2016}
-  validates :high_school, presence: true
-  validates :last_name, presence: true
-  validates :state, presence: true
-  validates :gender, presence: true
-  validates :user_id, presence: true
+  validates :high_school,     presence: true
+  validates :last_name,       presence: true
+  validates :state,           presence: true
+  validates :gender,          presence: true
+  validates :user_id,         presence: true
   validates :height_feet, :inclusion => { :in => 1..8}
   validates :height_inches, :inclusion => { :in => 1..12}
   validates :weight, :inclusion => { :in => 1..500}
@@ -75,7 +75,7 @@ class Athlete < ActiveRecord::Base
     relationships.find_by_followed_id(other_athlete.id).destroy
   end
   
-  def self.low_high_graduation_year
+  def self.low_high_graduation_years
       [Athlete.minimum(:graduation_year), Athlete.maximum(:graduation_year)]
   end
   

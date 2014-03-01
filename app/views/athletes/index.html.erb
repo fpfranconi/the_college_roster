@@ -4,23 +4,32 @@
 		<div class="athletefilter span4">
 			<p>Name</p>
 			<br>
+			<% form_tag athletes_path do %>
+				<p>
+					<%= text_field_tag :search %>
+					<%= submit_tag "Search"%>
+				</p>
+			<% end %>
+			<br>
 			<p>Sport</p>
 			<br>
 			<p>Position</p>
 			<br>
-			<h4>Graduation Year</h4>
-			<div class="span4"></div>
+			<p>Graduation Year</p>
+				<span id="x_low_selected"><%= @graduation_year_range.first %></span> - <span id="x_high_selected"><%= @graduation_year_range.last %></span>
+			<br>
 			<br>
 			<div id="x_slider" style="font-size:62.5%; width:150px;"></div>
 			<br>
-			<div>
-				<p>	
-					<span class="span3" id="x_low_selected"><%= @graduation_year_range.first %></span> 
-					<span class="span4" id="x_high_selected"><%= @graduation_year_range.last %></span>
-				</p>
-			</div>
-			<br>
 			<p>State</p>
+				<div>
+					<%= render 'selectstatesform' %>
+				</div>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
 			<br>
 			<p>Height</p>
 			<br>
@@ -50,7 +59,7 @@
       min: <%= @graduation_year_range.first %>,
       values: [<%= @graduation_year_range.first %>, <%= @graduation_year_range.last %> ],
       stop: function(event, ui) {
-        var prices = $('#x_slider').slider('option', 'values');
+        var graduation_years = $('#x_slider').slider('option', 'values');
         $('#x_low_selected').html(graduation_years[0]);
         $('#x_high_selected').html(graduation_years[1]);
         $.ajax({

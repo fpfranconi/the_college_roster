@@ -11,7 +11,7 @@ class AthletesController < ApplicationController
       @athletes = Athlete.filter(params[:low], params[:high])
     end
 
-    @graduation_year_range = Athlete.low_high_graduation_year
+    @graduation_year_range = Athlete.low_high_graduation_years
     
     respond_to do |format|
       format.html # index.html.erb

@@ -3,8 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .athletefilter {
-	background-color: grey;
-	padding-left: 5px;
+	padding-left: 10px;
 	font-size: 15px;
 	font-weight: bold;
 	
@@ -13,4 +12,14 @@
 .results {
 	background-color: white;
 	text-align: left;
+	list-style: none;
+	padding-top: 5px;
+}
+
+#queryscrollbox {
+	border-style: solid;
+	border-width: 1px;
+	list-style: none;
+	height: 100px;
+	overflow: auto;
 }

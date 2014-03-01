@@ -10,11 +10,11 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require jquery_ujs
+//= require jquery-1.8.3
+//= require bootstrap
+//= require jquery-ui-1.9.2.custom
 //= require_tree .
 
-!function ($) {
 
-  "use strict"; // jshint ;_;
 
+$("#x_athlete_list").html("<%= escape_javascript(render(@athletes)) %>");
